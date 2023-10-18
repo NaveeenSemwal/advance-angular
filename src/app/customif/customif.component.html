@@ -1,0 +1,16 @@
+
+<!--  Below both Structure and attribute directive are same
+ If you do the page inspect, for below you will get the container.
+
+ Below converted into ng-template and then it converted into ---container
+-->
+
+<div *customIf="IsAdminRole">
+    <p>This is Naveen</p>
+</div>
+
+
+
+<ng-template [ngIf]="IsAdminRole">
+    <p>This is Semwal</p>
+</ng-template>
