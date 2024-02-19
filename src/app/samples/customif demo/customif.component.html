@@ -5,12 +5,14 @@
  Below converted into ng-template and then it converted into ---container
 -->
 
+
+<!-- This is structure directive -->
 <div *customIf="IsAdminRole">
     <p>This is Naveen</p>
 </div>
 
-
-
+<!-- 
+This is attribute directive -->
 <ng-template [ngIf]="IsAdminRole">
     <p>This is Semwal</p>
 </ng-template>
