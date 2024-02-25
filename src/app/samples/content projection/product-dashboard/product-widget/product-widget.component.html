@@ -1,0 +1,11 @@
+<div>
+<ng-content select=".header"></ng-content>
+    <ul class="list-group" *ngFor="let product of products">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{product.Name}}
+          <div>{{product.Price}}</div>
+        </li>
+      </ul>
+      <ng-content elect=".link"></ng-content>
+</div>
+
