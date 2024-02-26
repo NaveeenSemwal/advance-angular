@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomIfDirective } from './custom-directive/CustomIf.directive';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomifComponent } from './samples/customif demo/customif.component';
 import { ViewChildComponent } from './samples/view-child/view-child.component';
 import { CounterComponent } from './samples/view-child/counter/counter.component';
@@ -43,7 +43,8 @@ import { ReactiveFormComponent } from './samples/forms/reactive-form/reactive-fo
         BrowserAnimationsModule,
         MatTreeModule, 
         MatButtonModule, 
-        MatIconModule
+        MatIconModule,
+        ReactiveFormsModule
     ]
 })
 export class AppModule { }
