@@ -19,6 +19,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { TreeViewComponent } from './samples/tree-view/tree-view.component';
 import { ReactiveFormComponent } from './samples/forms/reactive-form/reactive-form.component';
 import { ViewchildrenComponent } from './samples/viewchildren/viewchildren.component';
+import { HeaderComponent } from './samples/header/header.component';
+import { FooterComponent } from './samples/footer/footer.component';
+import { SideNavigationComponent } from './samples/side-navigation/side-navigation.component';
+import { NgTemplateComponent } from './samples/ng-template/ng-template.component';
+import { NgContainerComponent } from './samples/ng-container/ng-container.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +39,12 @@ import { ViewchildrenComponent } from './samples/viewchildren/viewchildren.compo
         ProductWidgetComponent,
         TreeViewComponent,
         ReactiveFormComponent,
-        ViewchildrenComponent
+        ViewchildrenComponent,
+        HeaderComponent,
+        FooterComponent,
+        SideNavigationComponent,
+        NgTemplateComponent,
+        NgContainerComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

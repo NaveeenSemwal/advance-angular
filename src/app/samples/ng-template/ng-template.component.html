@@ -1,0 +1,70 @@
+<h2>Defining a Template using ng-Template</h2>
+ 
+<ng-template #naveenTemplate>
+  <p> Say Hello</p>
+</ng-template>
+
+
+<ng-container *ngTemplateOutlet="naveenTemplate">
+    This text is not displayed
+  </ng-container> 
+   
+
+
+  
+
+   
+  <ng-template #TemplateRefExample>
+    <p> ng-template using TemplateRef and ViewContainerRef</p>
+    <p>The template will be appended at the bottom.</p>
+  </ng-template>
+
+<a href="https://www.tektutorialshub.com/angular/ng-template-in-angular/">https://www.tektutorialshub.com/angular/ng-template-in-angular/</a>
+  <h2>Using ngTemplate with ngIf then & else</h2>
+ <p>One common use case for ng-container is to apply a structural directive to multiple elements without wrapping them in an additional HTML tag</p>
+ <ng-container *ngIf="selected; then thenBlock1 else elseBlock1">
+  <p>This content is not shown</p>
+  </ng-container>
+ 
+<ng-template #thenBlock1>
+  <p>content to render when the selected is true.</p>
+</ng-template>
+ 
+<ng-template #elseBlock1>
+  <p>content to render when selected is false.</p>
+</ng-template>
+
+<input type="text" [(ngModel)]="num">
+
+ 
+<div [ngSwitch]="num">
+  <div *ngSwitchCase="'1'">One</div>
+  <div *ngSwitchCase="'2'">Two</div>
+  <div *ngSwitchCase="'3'">Three</div>
+  <div *ngSwitchCase="'4'">Four</div>
+  <div *ngSwitchCase="'5'">Five</div>
+  <div *ngSwitchDefault>This is Default</div>
+</div>
+
+ <h1>Both are same thing</h1>
+<div [ngSwitch]="num">
+    <ng-template [ngSwitchCase]="'1'">
+      <div>One</div>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'2'">
+      <div>Two</div>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'3'">
+      <div>Three</div>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'4'">
+      <div>Four</div>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'5'">
+      <div>Five</div>
+    </ng-template>
+    <ng-template ngSwitchDefault>
+      <div>This is default</div>
+    </ng-template>
+  </div>
+   

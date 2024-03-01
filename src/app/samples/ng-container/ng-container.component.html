@@ -1,0 +1,15 @@
+
+<a href="https://www.tektutorialshub.com/angular/ng-container-in-angular/">https://www.tektutorialshub.com/angular/ng-container-in-angular/</a>
+
+<div [ngSwitch]="value">
+    <ng-container *ngSwitchCase="0">Text one</ng-container>
+    <ng-container *ngSwitchCase="1">Text two</ng-container>
+</div>
+
+
+
+<ng-container *ngIf="items">
+    <div *ngFor="let item of items;">
+      {{item.name}}
+    </div>
+   </ng-container>
