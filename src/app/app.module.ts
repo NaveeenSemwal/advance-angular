@@ -18,6 +18,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatButtonModule } from '@angular/material/button';
 import { TreeViewComponent } from './samples/tree-view/tree-view.component';
 import { ReactiveFormComponent } from './samples/forms/reactive-form/reactive-form.component';
+import { ViewchildrenComponent } from './samples/viewchildren/viewchildren.component';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { ReactiveFormComponent } from './samples/forms/reactive-form/reactive-fo
         ProductDashboardComponent,
         ProductWidgetComponent,
         TreeViewComponent,
-        ReactiveFormComponent
+        ReactiveFormComponent,
+        ViewchildrenComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
