@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -27,12 +27,21 @@ export class ReactiveFormComponent implements OnInit {
           region: new FormControl(null),
           postal: new FormControl(null, Validators.required)
 
-       })
+       }),
+       skills : new FormArray([
+        new FormControl(null ,Validators.required),
+        new FormControl(null,Validators.required),
+        new FormControl(null,Validators.required)
+
+       ])
       
     })
 
   }
 
+  get skills() : FormArray {
+    return this.reactiveForm.get("skills") as FormArray
+  }
 
   OnRegister(){
 
@@ -40,6 +49,12 @@ export class ReactiveFormComponent implements OnInit {
 
   }
 
+  removeSkill(i){
 
+  }
+
+  addSkills(){
+
+  }
 
 }

@@ -90,14 +90,14 @@
       </div>
   
       <!--HTML for Skills Form Array -->
-      <!-- <div class="input-box skills" formArrayName="skills">
+      <div class="input-box skills" formArrayName="skills">
         <h4>Add Skills</h4>
-        <div class="column">
-          <input type="text" placeholder="Add Skill...">
-          <button type="button" class="btn-add-delete">Delete</button>
+        <div class="column" *ngFor="let item of skills.controls; let i = index;">
+          <input type="text" placeholder="Add Skill..." [formControlName]="i">
+          <button type="button"  (click)="removeSkill(i)" class="btn-add-delete">Delete</button>
         </div> 
       </div>
-      <button type="button" class="btn-add-delete">Add Skills</button> -->
+      <button type="button" (click)="addSkills()" class="btn-add-delete">Add Skills</button>
   
       <!--HTML for Experience Form Array -->
       <!-- <div class="input-box">
