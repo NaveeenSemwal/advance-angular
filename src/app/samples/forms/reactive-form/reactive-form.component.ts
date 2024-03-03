@@ -29,12 +29,20 @@ export class ReactiveFormComponent implements OnInit {
        }),
        skills : new FormArray([
         new FormControl(null ,Validators.required)
-       ])
+       ]),
+       experiences : new FormArray([])
     })
+
+
+   
   }
 
   get skills() : FormArray {
     return this.reactiveForm.get("skills") as FormArray
+  }
+
+  get experiences() : FormArray {
+    return this.reactiveForm.get("experiences") as FormArray
   }
 
   OnRegister(){
@@ -51,4 +59,22 @@ export class ReactiveFormComponent implements OnInit {
     this.skills.push(new FormControl(null, Validators.required))
   }
 
+  addExperiences(){
+
+    const frmGroup = new FormGroup({
+      company: new FormControl(null),
+      position: new FormControl(null),
+      totalExp: new FormControl(null),
+      start: new FormControl(null),
+      end: new FormControl(null),
+
+     });
+
+      this.experiences.push(frmGroup);
+
+  }
+
+  removeExperience(index : number){
+    this.experiences.removeAt(index);
+    }
 }

@@ -100,13 +100,13 @@
       <button type="button" (click)="addSkills()" class="btn-add-delete">Add Skills</button>
   
       <!--HTML for Experience Form Array -->
-      <!-- <div class="input-box">
-        <div class="experience">
-          <label>Experience</label>
-          <input type="text" placeholder="Company Name" />
+      <div class="input-box" formArrayName="experiences">
+        <div [formGroupName]="i" class="experience" *ngFor="let item of experiences.controls; let i = index;">
+          <label>Experience {{i + 1}}</label>
+          <input type="text" placeholder="Company Name"  formControlName="company"/>
           <div class="column">
             <div class="select-box">
-              <select>
+              <select formControlName="position">
                 <option hidden>Position</option>
                 <option>Junior Developer</option>
                 <option>Software Developer</option>
@@ -114,19 +114,18 @@
                 <option>Team Lead</option>
               </select>
             </div>
-            <input type="number" placeholder="Experience" />
-          </div>
+            <input type="number" placeholder="Experience" formControlName="totalExp" />
+          </div> 
           <div class="column">
-            <input type="date" placeholder="Start Date" />
-            <input type="date" placeholder="End Date" />
+            <input type="date" placeholder="Start Date" formControlName="start" />
+            <input type="date" placeholder="End Date" formControlName="end" />
           </div>
-          <button type="button" class="btn-add-delete">Delete Experience</button>
+          <button type="button" (click)="removeExperience(i)" class="btn-add-delete">Delete Experience</button>
         </div>
       </div>
-      <button type="button" class="btn-add-delete">Add Experience</button> -->
+      <button type="button" (click)="addExperiences()" class="btn-add-delete">Add Experience</button>
   
       <input type="submit" value="Submit" class="submit-btn" [disabled]="!reactiveForm.valid"> 
-      <!-- [disabled]="!reactiveForm.valid" -->
     </form>
   </section>
   
