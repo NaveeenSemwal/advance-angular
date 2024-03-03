@@ -26,17 +26,11 @@ export class ReactiveFormComponent implements OnInit {
           city: new FormControl(null),
           region: new FormControl(null),
           postal: new FormControl(null, Validators.required)
-
        }),
        skills : new FormArray([
-        new FormControl(null ,Validators.required),
-        new FormControl(null,Validators.required),
-        new FormControl(null,Validators.required)
-
+        new FormControl(null ,Validators.required)
        ])
-      
     })
-
   }
 
   get skills() : FormArray {
@@ -49,12 +43,12 @@ export class ReactiveFormComponent implements OnInit {
 
   }
 
-  removeSkill(i){
-
+  removeSkill(index : number){
+  this.skills.removeAt(index);
   }
 
   addSkills(){
-
+    this.skills.push(new FormControl(null, Validators.required))
   }
 
 }
