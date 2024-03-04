@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { CustomValidators } from 'src/app/validatiors/noSpaceAllowed.validator';
+import { CustomValidators } from 'src/app/validatiors/custom.validator';
 
 @Component({
   selector: 'app-reactive-form',
@@ -50,6 +50,7 @@ export class ReactiveFormComponent implements OnInit {
 
     console.log(this.reactiveForm);
 
+
   }
 
   removeSkill(index : number){
@@ -63,13 +64,13 @@ export class ReactiveFormComponent implements OnInit {
   addExperiences(){
 
     const frmGroup = new FormGroup({
-      company: new FormControl(null),
-      position: new FormControl(null),
-      totalExp: new FormControl(null),
-      start: new FormControl(null),
+      company: new FormControl(null, Validators.required),
+      position: new FormControl(null, Validators.required),
+      totalExp: new FormControl(1, [Validators.required, CustomValidators.validateNumericValue]),
+      start: new FormControl(null , Validators.required),
       end: new FormControl(null),
 
-     });
+     },CustomValidators.dateRange('start','end'));
 
       this.experiences.push(frmGroup);
 

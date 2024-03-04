@@ -1,6 +1,8 @@
 <section class="container">
     <header>Registration Form</header>
   
+
+   
     <form class="form" [formGroup]="reactiveForm" (ngSubmit)="OnRegister()">
       <div class="column">
         <div class="input-box">
@@ -102,8 +104,12 @@
       <!--HTML for Experience Form Array -->
       <div class="input-box" formArrayName="experiences">
         <div [formGroupName]="i" class="experience" *ngFor="let item of experiences.controls; let i = index;">
+
           <label>Experience {{i + 1}}</label>
           <input type="text" placeholder="Company Name"  formControlName="company"/>
+          <small *ngIf="experiences.controls[i].get('company').errors?.['required']  && experiences.controls[i].get('company').touched">
+            *Company Name is a required field.
+          </small>
           <div class="column">
             <div class="select-box">
               <select formControlName="position">
@@ -115,17 +121,28 @@
               </select>
             </div>
             <input type="number" placeholder="Experience" formControlName="totalExp" />
+            <small *ngIf="experiences.controls[i].get('totalExp').errors?.['required']  && experiences.controls[i].get('totalExp').touched">
+              *Experience is a required field.
+            </small>
+            <small *ngIf="experiences.controls[i].get('totalExp').errors?.['numericValueCheck']  && experiences.controls[i].get('totalExp').touched">
+              *Experience is not valid.
+            </small>
           </div> 
           <div class="column">
             <input type="date" placeholder="Start Date" formControlName="start" />
+            
             <input type="date" placeholder="End Date" formControlName="end" />
           </div>
+          <small *ngIf="experiences.controls[i].errors?.['dateRange']">
+            *Start date should be less than end date.
+          </small>
+
           <button type="button" (click)="removeExperience(i)" class="btn-add-delete">Delete Experience</button>
         </div>
       </div>
       <button type="button" (click)="addExperiences()" class="btn-add-delete">Add Experience</button>
   
-      <input type="submit" value="Submit" class="submit-btn" [disabled]="!reactiveForm.valid"> 
+      <input type="submit" value="Submit" class="submit-btn"> 
     </form>
   </section>
   
