@@ -24,6 +24,7 @@ import { CockpitComponent } from './samples/component-communication/Input-Output
 import { ProductDashboardComponent } from './samples/component-communication/content projection/product-dashboard/product-dashboard.component';
 import { ProductWidgetComponent } from './samples/component-communication/content projection/product-dashboard/product-widget/product-widget.component';
 import { ViewchildrenComponent } from './samples/component-communication/viewchildren/viewchildren.component';
+import { StudentListComponent } from './samples/pipes/student-list/student-list.component';
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import { ViewchildrenComponent } from './samples/component-communication/viewchi
         FooterComponent,
         SideNavigationComponent,
         NgTemplateComponent,
-        NgContainerComponent
+        NgContainerComponent,
+        StudentListComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

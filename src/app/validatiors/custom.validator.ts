@@ -1,4 +1,6 @@
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { AbstractControl, AsyncValidatorFn, FormControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { UserService } from "../services/user.service";
+import { Observable, map, switchMap, timer } from "rxjs";
 
 export class CustomValidators
 {
@@ -33,6 +35,21 @@ export class CustomValidators
    static validateNumericValue(control : FormControl): { [key: string]: any; }{
       let isValid = control.value > 0;
       if (isValid) 
-      {return null;}else {return { 'numericValueCheck': true };}
+      {return null;} else {return { 'numericValueCheck': true };}
     }
+
+    // Async Validator is Pending.
+    static createValidator(userService: UserService): AsyncValidatorFn {
+      
+        return (control: AbstractControl) => {
+          return timer(500).pipe(
+              switchMap(() =>
+              userService.checkIfUsernameExists(control.value)
+                  .pipe(map((result: boolean) => result ? {asyncInvalid: true} : null)))
+          );
+      };
+    }
+
 }
+
+

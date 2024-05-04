@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 import { CustomValidators } from 'src/app/validatiors/custom.validator';
 
 @Component({
@@ -10,6 +11,14 @@ import { CustomValidators } from 'src/app/validatiors/custom.validator';
 export class ReactiveFormComponent implements OnInit {
 
   reactiveForm: FormGroup;
+
+  /**
+   *
+   */
+  constructor(private userService : UserService) {
+ 
+    
+  }
 
   ngOnInit(): void {
     
@@ -36,6 +45,18 @@ export class ReactiveFormComponent implements OnInit {
 
 
    
+      //   this.userService.checkIfUsernameExists('Batman').subscribe({
+      //   next : x=> console.log('Result  '+ x),
+      //   error(err) {
+      //     console.log('err  '+ err)
+      //   },
+      //   complete() {
+      //     console.log('Completed')
+      //   },
+      // }
+      
+      // );
+       
   }
 
   get skills() : FormArray {

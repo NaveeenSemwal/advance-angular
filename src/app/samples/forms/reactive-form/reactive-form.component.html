@@ -35,6 +35,9 @@
           <button class="btn-gen-username" type="button">
             Create a Username
           </button>
+          <small *ngIf="reactiveForm.get('username').errors?.['asyncInvalid'] && reactiveForm.get('username').touched">
+            *Username Already Exists.
+          </small>
         </div>
         <div class="input-box">
           <input type="date" placeholder="Date of Birth" formControlName="dob" />
