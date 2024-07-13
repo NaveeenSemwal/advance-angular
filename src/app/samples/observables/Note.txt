@@ -1,0 +1,64 @@
+Observable :
+Observable is not Native to Javascript and is provided by RxJS (Reactive Extension) library
+ It is used to handle async data. It handle  stream of data.
+             It can return multiple values.
+            
+
+Promise : 
+A promise is Native to Javascript program.
+It is used to handle async data. It is build in feature of Javascript.
+          It doesn't handle  stream of data. If we user promise for stream of data then the
+          promise will resolve as soon as first chunk will arrive. It always return single value.
+
+
+    A promise will certainly return a data even if no code us using that data. Whereas an 
+    Observable will return a data only if someone is going to use that or subscribed that.
+
+
+Javascript is a single threaded programming language. Like syncronous programming.
+
+When we request HTTP request asyncronosly it execute in the background and doesn't block the main UI thread.
+
+
+
+What is data streaming ?
+
+Sending data in small chunks from server to client. Like when you watch a vedio in NETFLIX
+. It start running the vedio as soon as first packet arrives. So that user doesn't have tp wait for long file.
+
+
+What is Observable pattern  ?
+
+RxJs works on Observable pattern.
+
+1. Observable : It Emits the data.
+2. Observer :  It subscribe to Observable. so whenever Observable emits data Observer gets notified.
+3. Handler : Then Observer can do something on data using Handler.
+
+
+Router - The Router enables navigation by interpreting a browser URL as an instruction to change the view.
+ 
+ActivateRoute-  provides access to information about the route, including route parameters, query parameters, and route URL segments.
+ 
+ 
+PRIMARY OUTLET - If not set, default value is "primary".
+ 
+<router-outlet></router-outlet>  --  PRIMARY OUTLET
+<router-outlet name='left'></router-outlet>  -- NAMED OUTLET
+<router-outlet name='right'></router-outlet> -- NAMED OUTLET
+ 
+ 
+BehaviorSubject - is a hot Observable. This means that when BehaviorSubject is created, it immediately produces the initial value and returns it before any subscriber exists.
+ 
+ 
+private subject = new BehaviorSubject<string>('');
+ 
+  public changeStyle(string) {
+    this.subject.next(string);
+  }
+ 
+  public observeStyles() {
+    return this.subject.asObservable();
+  }
+ 
+By only exposing asObservable you can consume the values emitted but prevent from making changes to the BehaviorSubject from outside the service where this BehaviorSubject was created. For this reason use asObservable().

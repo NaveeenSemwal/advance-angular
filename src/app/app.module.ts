@@ -25,6 +25,12 @@ import { ProductDashboardComponent } from './samples/component-communication/con
 import { ProductWidgetComponent } from './samples/component-communication/content projection/product-dashboard/product-widget/product-widget.component';
 import { ViewchildrenComponent } from './samples/component-communication/viewchildren/viewchildren.component';
 import { StudentListComponent } from './samples/pipes/student-list/student-list.component';
+import { ObservableDemoComponent } from './samples/observables/observable-demo/observable-demo.component';
+import { OfANDfromComponent } from './samples/observables/RxJs/of-andfrom/of-andfrom.component';
+import { TreeViewDialogComponent } from './samples/Dialog/tree-view-dialog/tree-view-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { NewTaskComponent } from './samples/component-communication/service-Eventemitter/new-task/new-task.component';
+import { ShowTaskComponent } from './samples/component-communication/service-Eventemitter/show-task/show-task.component';
 
 @NgModule({
     declarations: [
@@ -46,7 +52,12 @@ import { StudentListComponent } from './samples/pipes/student-list/student-list.
         SideNavigationComponent,
         NgTemplateComponent,
         NgContainerComponent,
-        StudentListComponent
+        StudentListComponent,
+        ObservableDemoComponent,
+        OfANDfromComponent,
+        TreeViewDialogComponent,
+        NewTaskComponent,
+        ShowTaskComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -55,10 +66,12 @@ import { StudentListComponent } from './samples/pipes/student-list/student-list.
         AppRoutingModule,
         FormsModule,
         BrowserAnimationsModule,
+        MatDialogModule,
         MatTreeModule, 
         MatButtonModule, 
         MatIconModule,
         ReactiveFormsModule
+        
     ]
 })
 export class AppModule { }
