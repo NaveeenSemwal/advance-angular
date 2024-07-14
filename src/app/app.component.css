@@ -13,3 +13,12 @@
   .white-text{
     color: #fff;
   }
+
+  button{
+    height: 45px;
+    border: none;
+    background-color: #E7005E;
+    color: white;
+    padding: 5px 20px;
+    margin-left: 10px;
+}

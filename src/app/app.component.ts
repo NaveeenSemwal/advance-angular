@@ -14,6 +14,11 @@ export class AppComponent {
 
   openDialog() {
     this.dialog.open(TreeViewDialogComponent, {
+      // disableClose: true,
+      //       width: '60%',
+      //       maxWidth: '60%',
+      //       // height: '90%',
+      //       maxHeight: '90%',
       data: {
         animal: 'panda',
       },

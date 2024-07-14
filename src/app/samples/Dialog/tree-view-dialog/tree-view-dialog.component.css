@@ -1,0 +1,13 @@
+button{
+    height: 45px;
+    border: none;
+    background-color: #E7005E;
+    color: white;
+    padding: 5px 20px;
+    margin-left: 10px;
+}
+
+.mat-tab-group {
+    margin-bottom: 48px;
+  }
+  

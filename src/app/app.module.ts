@@ -31,6 +31,13 @@ import { TreeViewDialogComponent } from './samples/Dialog/tree-view-dialog/tree-
 import {MatDialogModule} from '@angular/material/dialog';
 import { NewTaskComponent } from './samples/component-communication/service-Eventemitter/new-task/new-task.component';
 import { ShowTaskComponent } from './samples/component-communication/service-Eventemitter/show-task/show-task.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { NameFormComponent } from './samples/Dialog/my-name-form.component';
+import { PhoneFormComponent } from './samples/Dialog/my-phone-form.component';
+
+
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
     declarations: [
@@ -57,7 +64,10 @@ import { ShowTaskComponent } from './samples/component-communication/service-Eve
         OfANDfromComponent,
         TreeViewDialogComponent,
         NewTaskComponent,
-        ShowTaskComponent
+        ShowTaskComponent,
+
+        NameFormComponent,
+        PhoneFormComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -70,7 +80,13 @@ import { ShowTaskComponent } from './samples/component-communication/service-Eve
         MatTreeModule, 
         MatButtonModule, 
         MatIconModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatTabsModule,
+        MatButtonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        
+        
         
     ]
 })
