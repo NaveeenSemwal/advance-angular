@@ -1,0 +1,6 @@
+
+Scenrios - 
+
+Like EventEmitter we use subjects for cross  components communication.
+
+Subjects are special types of observable that allow emit the value to multiple subscribers.

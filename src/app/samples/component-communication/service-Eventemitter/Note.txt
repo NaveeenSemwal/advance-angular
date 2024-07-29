@@ -1,0 +1,5 @@
+
+Scenrios - 
+
+We need to pass data b/w two or multiple component without having parent child then we 
+can use service with Event Emitter

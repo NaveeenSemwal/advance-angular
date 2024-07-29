@@ -38,6 +38,8 @@ import { PhoneFormComponent } from './samples/Dialog/my-phone-form.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MessageShowTaskComponent } from './samples/observables/RxJs/Subjects/show-task/show-task.component';
+import { MessageNewTaskComponent } from './samples/observables/RxJs/Subjects/new-task/new-task.component';
 
 @NgModule({
     declarations: [
@@ -67,7 +69,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         ShowTaskComponent,
 
         NameFormComponent,
-        PhoneFormComponent
+        PhoneFormComponent,
+        MessageShowTaskComponent,
+        MessageNewTaskComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
