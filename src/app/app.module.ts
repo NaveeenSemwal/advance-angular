@@ -34,12 +34,14 @@ import { ShowTaskComponent } from './samples/component-communication/service-Eve
 import { MatTabsModule } from '@angular/material/tabs';
 import { NameFormComponent } from './samples/Dialog/my-name-form.component';
 import { PhoneFormComponent } from './samples/Dialog/my-phone-form.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MessageShowTaskComponent } from './samples/observables/RxJs/Subjects/show-task/show-task.component';
 import { MessageNewTaskComponent } from './samples/observables/RxJs/Subjects/new-task/new-task.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 
 @NgModule({
     declarations: [
@@ -71,7 +73,9 @@ import { MessageNewTaskComponent } from './samples/observables/RxJs/Subjects/new
         NameFormComponent,
         PhoneFormComponent,
         MessageShowTaskComponent,
-        MessageNewTaskComponent
+        MessageNewTaskComponent,
+        VehicleComponent
+        
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -89,6 +93,7 @@ import { MessageNewTaskComponent } from './samples/observables/RxJs/Subjects/new
         MatButtonModule,
         MatInputModule,
         MatFormFieldModule,
+        MatSelectModule
         
         
         
